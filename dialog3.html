@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="Angular Material: UI Components" />
+
+    <link
+      rel="stylesheet"
+      href="https://rawgit.com/angular/bower-material/master/angular-material.css"
+    />
+    <link rel="stylesheet" href="./app.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-animate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-aria.min.js"></script>
+    <script src="https://rawgit.com/angular/bower-material/master/angular-material.js"></script>
+  </head>
+  <body ng-app="MyApp" ng-cloak layout="column">
+    <md-toolbar class="toolbar">
+      <h3>Angular Dialog</h3>
+    </md-toolbar>
+
+    <md-card style="width:40%;height: 400px;">
+      <md-card-header>
+        <md-card-avatar>
+          <img class="md-user-avatar" src="1.png" />
+        </md-card-avatar>
+        <md-card-header-text>
+          <span class="md-title">Title</span>
+          <span class="md-subhead">Sub header</span>
+        </md-card-header-text>
+      </md-card-header>
+      <img
+        ng-src="1.png"
+        class="md-card-image"
+        style="width:100px;height:100px;"
+        alt="image caption"
+      />
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Card headline</span>
+          <span class="md-subhead">Card subheader</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-actions layout="row" layout-align="start center">
+        <md-button>添加</md-button>
+        <md-button>编辑</md-button>
+        <md-card-icon-actions>
+          <md-button class="md-icon-button" aria-label="icon">
+            <md-icon md-svg-icon="icon"></md-icon>
+          </md-button>
+        </md-card-icon-actions>
+      </md-card-actions>
+      <md-card-content>
+        <p>
+          Card content
+        </p>
+      </md-card-content>
+    </md-card>
+
+    <script>
+      angular
+        .module("MyApp", ["ngMaterial"])
+        .config(function($sceProvider) {
+          // ngMaterial $mdIconProvider will be updated  to mark urls as         safe.
+          // Meanwhile, disable $sce for ngMaterial CodePen Demos that           using external SVGs
+          $sceProvider.enabled(false);
+        })
+        .run(function($log) {
+          $log.debug("MyApp is ready!");
+        });
+    </script>
+    <script src="script.js"></script>
+    <link rel="“stylesheet”" href="“app.css”" />
+  </body>
+</html>
